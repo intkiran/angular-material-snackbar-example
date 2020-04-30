@@ -32,6 +32,15 @@ showSnackbarTopPosition(content, action,duration) {
       horizontalPosition: 'center', // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
     });
 }
+showSnackbarCssStyles(content, action,duration) {
+let sb = this.snackBar.open(content, action, {
+    duration: duration,
+    panelClass: ['custom-style']
+});
 
+sb.onAction().subscribe(() => {
+    sb.dismiss();
+});
 
+}
 }
