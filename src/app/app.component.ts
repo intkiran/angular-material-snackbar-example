@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MessageService } from 'primeng';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'my-app',
@@ -7,14 +7,11 @@ import { MessageService } from 'primeng';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular';
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) {}
 
-  openSnackBar() {
-    this._snackBar.openFromComponent(PizzaPartyComponent, {
-      duration: this.durationInSeconds * 1000,
-    });
+  showSnackbar(content) {
+    this.snackBar.open(content);
   }
-}
+
 
 }

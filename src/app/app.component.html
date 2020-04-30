@@ -1,7 +1,10 @@
 <ul>
-  <li><a  routerLinkActive="active" routerLink="/basic">Basic Toast Example </a></li>
-  <li><a  routerLinkActive="active" routerLink="/other">Toast Html Message example</a></li>
-  <li><a  routerLinkActive="active" routerLink="/position">Toast position Message example</a></li>
+  <li><button mat-raised-button color="primary" (click)="showSnackbar('Net is offline, Trying to reconnect ....')">
+  Simple Snackbar
+</button>
+</li>
+  <li></li>
+  <li></li>
 </ul>
     <router-outlet></router-outlet>
 
