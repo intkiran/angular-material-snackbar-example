@@ -11,7 +11,7 @@ import {
 })
 export class BasicSnackbarComponent implements OnInit {
   constructor(
-    public snackBarRef: MatSnackBarRef<BasicSnackbarComponent>,
+    public sbRef: MatSnackBarRef<BasicSnackbarComponent>,
     @Inject(MAT_SNACK_BAR_DATA) public data: any
   ) {}
   ngOnInit() {}
