@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { BasicSnackbarComponent } from "./basic-snackbar/basic-snackbar.component";
 
 @Component({
   selector: "my-app",
@@ -7,6 +8,8 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
+  data = "This is an example for passing data";
+
   constructor(private snackBar: MatSnackBar) {}
 
   showSnackbar(content) {
@@ -38,6 +41,12 @@ export class AppComponent {
     });
     sb.onAction().subscribe(() => {
       sb.dismiss();
+    });
+  }
+  showBasicComponent(message: string, panelClass: string) {
+    this.snackBar.openFromComponent(BasicSnackbarComponent, {
+      data: this.data,
+      duration: 10000
     });
   }
 }
